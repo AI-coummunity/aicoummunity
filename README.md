@@ -1,0 +1,2 @@
+# aicoummunity
+community with ai
