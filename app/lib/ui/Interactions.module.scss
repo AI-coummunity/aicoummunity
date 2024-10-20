@@ -1,0 +1,14 @@
+.interactions{
+    display: flex;
+    padding: 3rem 1rem 1rem 5rem;
+}
+.views, .favorite{
+    display:flex;
+    align-items: center;
+    color:#94969b;
+    margin-right: 2rem;
+}
+.count{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
