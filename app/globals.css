@@ -1,0 +1,83 @@
+.chat-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.chat-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+  background-color: #f9f9f9;
+}
+
+.chat-bubble {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.chat-bubble.me {
+  flex-direction: row-reverse;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-bubble.me .profile-pic {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #d3d3d3;
+  position: relative;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+  border-color: #d3d3d3 transparent transparent transparent;
+  top: 10px;
+  left: -10px;
+}
+
+.chat-bubble.me .bubble {
+  background-color: #0084ff;
+  color: white;
+}
+
+.chat-bubble.me .bubble::before {
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent #0084ff transparent;
+  left: auto;
+  right: -10px;
+}
+
+.input-section {
+  margin-top: 10px;
+}
+
+.input-box {
+  padding: 10px;
+  width: 70%;
+}
+
+.send-button {
+  padding: 10px;
+  margin-left: 10px;
+}
