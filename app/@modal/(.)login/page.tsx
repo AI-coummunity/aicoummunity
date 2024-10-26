@@ -1,12 +1,36 @@
+'use client';
+
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 import { Sixtyfour } from 'next/font/google';
-import styles from '../lib/ui/Login.module.scss';
 import Link from 'next/link';
+import styles from '../../lib/ui/LoginModal.module.scss';
+import { usePathname,useRouter } from 'next/navigation';
 
 const sixtyfour = Sixtyfour({subsets:['latin']})
 
-export default function Login(){
-    return(
-        <div className={styles.container}>
+
+
+export default function LoginModal(){
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleClose = () => router.back()
+  const close = () => {router.back()}
+
+  return(
+    <>
+    <Modal open={pathname==='/login'} onClose={close}>
+      <Box sx={{position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: 600,
+                bgcolor: 'background.paper',
+                border: '2px solid #000',
+                boxShadow: 24,
+                p: 4}}
+        >
+           <div className={styles.container}>
             <div className={styles.logo}> {/* 로고 */}
                 <h1 className={sixtyfour.className}>FINAL PEOPLE</h1>
             </div>
@@ -34,5 +58,9 @@ export default function Login(){
                 </form>
             </div>
         </div>
-    )
+        <button onClick={handleClose}>닫기</button>
+        </Box>
+    </Modal>
+    </>
+  )
 }

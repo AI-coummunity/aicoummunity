@@ -21,13 +21,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children,modal
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode,
+  modal:React.ReactNode
 }>) {
   return (
     <html lang="ko">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {modal}
         <Header />
         {children}
       </body>
